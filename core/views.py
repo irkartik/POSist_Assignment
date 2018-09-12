@@ -74,6 +74,7 @@ def createChildNode(request):
 
 	return HttpResponse("Child Created")
 
+
 def editNode(request):
 	'''
 	USER PROVIDES THE NODEID OF THE NODE TO BE EDITED 
