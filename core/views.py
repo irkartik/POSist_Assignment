@@ -76,8 +76,29 @@ def editNode(request):
 	'''
 	USER PROVIDES THE NODEID OF THE NODE TO BE EDITED 
 		# USERS SELECT THE NODE FROM THE DROPDOWN MENU AT THE FRONTEND
+			
+		data{
+			value
+		}
+		nodeId
 		
-		
-
 	'''
+
+	#THESE VALUES ARE PROVIDED BY THE USER USING THE API
+	nodeId = request.POST.get('nodeId')
+	data = request.POST.get('data')
+
+
+	temp_node = Node.objects.get(nodeId=nodeId)
+	temp_node.data.value = data
+
+	parent_node = Node.objects.get(nodeId = Node.objects.get(temp_node.referenceNodeId))
+
+	sum = 0
+	for children in parent_node.childReferenceNodeId:
+		sum += children.data.value
+
+	if child_node.value <= sum:
+		child_node.save()		# SAVE THE CHILD ONLY IF THE VALUE OF CHILD NODE IS SMALLER THAN THE VALUE (PARENT_VALUE - (SUM OF ALL CHILD VALUES))
+
 
