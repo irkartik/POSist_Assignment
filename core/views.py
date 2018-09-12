@@ -105,3 +105,12 @@ def editNode(request):
 
 
 	return HttpResponse("Node Edited")
+
+
+def findLongestChain(request):
+
+	'''
+	USERS PROVIDE THE ID OF NODE OF WHICH THE LONGEST CHAIN IS TO BE FOUND
+	'''
+
+	return HttpResponse('LONGEST CHAIN LENGTH')
