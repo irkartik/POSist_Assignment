@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from .models import Node, Data
-
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -72,6 +72,8 @@ def createChildNode(request):
 		child_node.save()		# SAVE THE CHILD ONLY IF THE VALUE OF CHILD NODE IS SMALLER THAN THE VALUE (PARENT_VALUE - (SUM OF ALL CHILD VALUES))
 
 
+	return HttpResponse("Child Created")
+
 def editNode(request):
 	'''
 	USER PROVIDES THE NODEID OF THE NODE TO BE EDITED 
@@ -102,3 +104,4 @@ def editNode(request):
 		child_node.save()		# SAVE THE CHILD ONLY IF THE VALUE OF CHILD NODE IS SMALLER THAN THE VALUE (PARENT_VALUE - (SUM OF ALL CHILD VALUES))
 
 
+	return HttpResponse("Node Edited")

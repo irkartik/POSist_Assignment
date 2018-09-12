@@ -1,5 +1,15 @@
 # POSist_Assignment
 
+ABOUT THE PROJECT
+
+1. The project has been implemented using Django Framework.
+2. Project requires data to be fed using RESTFUL APIs.
+3. Database models has been created in the core/models.py file
+4. Application logic has been written in the core/views.py file
+5. This project implements sqlite database
+
+
+
 STEPS TO RUN:
 
 1. Install dependencies
